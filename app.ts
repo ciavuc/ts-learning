@@ -1,6 +1,6 @@
 /* 
-Type: Tuple
-Added by TypeScript and is a fixed-length array
+Type: Enum
+Added by TypeScript Automatically enumerated global constant identifiers 
 */
 
 enum Role { ADMIN, READ_ONLY, AUTHOR };
