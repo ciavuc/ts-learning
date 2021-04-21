@@ -1,6 +1,11 @@
 /* 
-Type: Tuple
-Added by TypeScript and is a fixed-length array
+Type: Object
+Any Javascript object, more specific types 
+(type of object) are possible
+
+Type: Array
+Any Javascript array, the type can be flexible 
+or strict (regarding the element types)
 */
 
 const person = {
