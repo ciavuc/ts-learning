@@ -1,39 +1,29 @@
 /* 
-Type: Aliases
+Type: Return Types
 */
-type Combinable = number | string;
-type ConversionDescriptor = 'as-number' | 'as-text';
-
 
 /* 
-Type: Union types
-*/
+Return type set to number
+ Best to let Typescript do it's job of infering the type
+ Unless you have to specifically set it
+ */
+// function add(n1: number, n2: number): number {
+//     return n1 + n2;
+// }
 
-function combine(
-    input1: Combinable,
-    input2: Combinable,
-    resultConversion: ConversionDescriptor,
-) {
-    let result;
-    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
-        result = +input1 + +input2;
-    } else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
-    // if (resultConversion === 'as-number') {
-    //     return +result;
-    // } else {
-    //     return result.toString();
-    // }
+function add(n1: number, n2: number) {
+    return n1 + n2;
 }
 
-const combinedAges = combine(30, 20, 'as-number');
-console.log(combinedAges);
+// 1. As nothing is returned, the return type will be set to void by Typescript anyway
+// 2. However technically this would return undefined
+// 3.Typescript does not allow functions to return undefined without a return like below
+// function printResult(num: number): undefined {
+//     console.log('Result' + num);
+// }
 
+function printResult(num: number): void { // void for demo purposes
+    console.log('Result' + num);
+}
 
-const combinedStringAges = combine('30', '20', 'as-number');
-console.log(combinedStringAges);
-
-const combinedNames = combine('Joe', 'Fred', 'as-text');
-console.log(combinedNames);
+printResult(add(5, 12));
