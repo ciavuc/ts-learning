@@ -3,10 +3,13 @@ Type: Tuple
 Added by TypeScript and is a fixed-length array
 */
 
+enum Role { ADMIN, READ_ONLY, AUTHOR };
+
 const person = {
     name: "Joe",
     age: 25,
-    hobbies: ['Walking', 'Cars', 'Roast Dinners']
+    hobbies: ['Walking', 'Cars', 'Roast Dinners'],
+    role: Role.AUTHOR
 }
 
 let favouriteActivities: string[];
@@ -23,3 +26,6 @@ for (const hobby of person.hobbies) {
     // console.log(hobby.map) 
 }
 
+if (person.role === Role.AUTHOR) {
+    console.log('Is Author')
+}
